@@ -1,0 +1,63 @@
+{% extends "base.html.twig" %}
+{% block title %}Item 1{% endblock %}
+
+{% block stylesheet %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('zoombox/zoombox.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/rounded.css') }}">
+   {#<link rel="stylesheet" href="{{ asset('css/images.css') }}">#}
+{% endblock stylesheet %}
+
+{% block updateButtonLink %}{{ path('UpdateItem1') }}{% endblock updateButtonLink %}
+
+
+
+
+{% block test %}
+
+{% endblock test %}
+
+
+{% block downloadButtonLink %}{{ path('item1Download') }}{% endblock %}
+
+{% block secondarytxt %}Item1{% endblock secondarytxt %}
+
+
+{% block item0001Active %}active{% endblock item0001Active %}
+
+
+{#{% block src %}src=""{% endblock src %}#}
+
+
+{% block thumbnails %}
+
+    {% for thumb in thumbs %}
+
+        <div  class="col-lg-3 col-md-4 col-xs-6  thumbs" >
+
+            <a href="{% block levelLink %}{% endblock levelLink %}img/{% block item %}item1{% endblock item %}/{{ thumb.basename }}" rel="zoombox[{% block zoomboxVille %}item1{% endblock zoomboxVille %}]">
+                <img id="thumb" class="img-fluid img-thumbnail thumbs " src="{% block levelLinkThumbs %}{% endblock levelLinkThumbs %}{{ thumb.dirname }}{{ thumb.basename }}" alt="">
+            </a>
+
+        </div>
+{% endfor %}
+{% endblock thumbnails %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% block javaScript %}
+    {{ parent() }}
+    <script type="text/javascript" src="{{ asset('zoombox/jquery.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('zoombox/zoombox.js') }}"></script>
+
+{% endblock javaScript %}

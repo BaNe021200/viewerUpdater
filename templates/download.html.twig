@@ -1,0 +1,64 @@
+{% extends "base.html.twig" %}
+
+{% block main %}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">&nbsp;</div>
+    </div>
+        <div class="row align-items-center">
+            <div class="col-lg-6 order-lg-2">
+
+
+
+
+
+
+
+                <form action="{% block path %} {% endblock path %}  " method="post" class="form-horizontal" enctype="multipart/form-data">
+                    <fieldset class="form-control">
+                        <legend>{% block legend %}Pinterest{% endblock legend %} {% block legendItem %}{% endblock legendItem %}
+                        </legend>
+                        <input type="text" class="form-control" name="username">
+
+                        <p> <label for="photo N°1">Photos N°1</label>
+                            <input type="file" class="form-control" name="fichier_01" id="img1">
+
+                        </p>
+
+                        <p><label for="photo N°2">Photos N°2</label>
+                            <input type="file" class="form-control" name="fichier_02" id="img2">
+
+                        </p>
+
+                        <p><label for="photo N°3">Photos N°3</label>
+                            <input type="file" class="form-control" name="fichier_03" id="img3">
+
+                        </p>
+
+                        <p><label for="photo N°4">Photos N°4</label>
+                            <input type="file" class="form-control" name="fichier_04" id="img4">
+
+
+                        </p><p><label for="photo N°5">Photos N°5</label>
+                            <input type="file" class="form-control" name="fichier_05" id="img5">
+
+                        </p>
+
+
+
+
+
+
+
+                    </fieldset>
+                    <button type="submit" class="btn btn-outline-primary btn-sm" >envoyer</button>
+                    <button type="reset" class="btn btn-outline-danger btn-sm" >tout effacer</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

@@ -1,0 +1,59 @@
+/:
+    path: /
+    controller: App\Controller\ImagesController::item1
+
+item1:
+    path: /item1
+    controller: App\Controller\ImagesController::item1
+
+item2.1:
+    path: /item2/item2_1
+    controller: App\Controller\ImagesController::item2_1
+
+item2.2:
+    path: /item2/item2_2
+    controller: App\Controller\ImagesController::item2_2
+
+
+item2Download2.1:
+    path: /item2/item2_1/download
+    controller: App\Controller\DownloadController::downloadItem2_1
+
+itemDownload2.2:
+    path: /item2/item2_2/download
+    controller: App\Controller\DownloadController::downloadItem2.2
+
+item2Upload2.1:
+    path: /item2/item2_1/upload
+    controller: App\Controller\DownloadController::uploadItem2_1
+    methods: [POST]
+
+item2Upload2.2:
+    path: /item2/item2_2/upload
+    controller: App\Controller\DownloadController::uploadItem2.2
+    methods: [POST]
+
+item1Download:
+    path: /item1/download
+    controller: App\Controller\DownloadController::downloaditem1
+
+item1Upload:
+    path: /item1/upload
+    controller: App\Controller\DownloadController::uploadItem1
+    methods: [POST]
+
+UpdateItem1:
+    path: /item1/Update
+    controller: App\Controller\DownloadController::updateItem1
+
+UpdateItem2.1:
+    path: /item2/item2_1/Update
+    controller: App\Controller\DownloadController::updateItem2_1
+
+UpdateItem2.2:
+    path: /item2/item2_2/Update
+    controller: App\Controller\DownloadController::updateItem2_2
+
+cropButton:
+    path: /cropButton
+    controller: App\Controller\DownloadController::cropButton
