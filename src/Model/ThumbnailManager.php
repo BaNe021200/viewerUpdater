@@ -58,4 +58,18 @@ class ThumbnailManager extends Manager
 
         return $thumbnails;
     }
+
+    public function destroyThumb($id)
+    {
+        $this->pdostatement = $this->pdo->prepare('
+        DELETE
+        FROM thumbnails WHERE id = :id ');
+        $this->pdostatement->bindValue(':id',$id,PDO::PARAM_INT);
+
+        $executeIsOk = $this->pdostatement->execute();
+        return $executeIsOk;
+
+    }
+
+
 }

@@ -6,54 +6,81 @@ item1:
     path: /item1
     controller: App\Controller\ImagesController::item1
 
-item2.1:
+item2_1:
     path: /item2/item2_1
     controller: App\Controller\ImagesController::item2_1
 
-item2.2:
+item2_2:
     path: /item2/item2_2
     controller: App\Controller\ImagesController::item2_2
 
 
-item2Download2.1:
+downloadItem1:
+    path: /item1/download
+    controller: App\Controller\DownloadController::downloadItem1
+
+downloadItem2_1:
     path: /item2/item2_1/download
     controller: App\Controller\DownloadController::downloadItem2_1
 
-itemDownload2.2:
+downloadItem2_2:
     path: /item2/item2_2/download
-    controller: App\Controller\DownloadController::downloadItem2.2
+    controller: App\Controller\DownloadController::downloadItem2_2
 
-item2Upload2.1:
+UploadItem1:
+    path: /item1/upload
+    controller: App\Controller\DownloadController::uploadItem1
+    methods: [POST]
+
+UploadItem2_1:
     path: /item2/item2_1/upload
     controller: App\Controller\DownloadController::uploadItem2_1
     methods: [POST]
 
-item2Upload2.2:
+Uploaditem2_2:
     path: /item2/item2_2/upload
-    controller: App\Controller\DownloadController::uploadItem2.2
-    methods: [POST]
-
-item1Download:
-    path: /item1/download
-    controller: App\Controller\DownloadController::downloaditem1
-
-item1Upload:
-    path: /item1/upload
-    controller: App\Controller\DownloadController::uploadItem1
+    controller: App\Controller\DownloadController::uploadItem2_2
     methods: [POST]
 
 UpdateItem1:
     path: /item1/Update
     controller: App\Controller\DownloadController::updateItem1
 
-UpdateItem2.1:
+UpdateItem2_1:
     path: /item2/item2_1/Update
     controller: App\Controller\DownloadController::updateItem2_1
 
-UpdateItem2.2:
+UpdateItem2_2:
     path: /item2/item2_2/Update
     controller: App\Controller\DownloadController::updateItem2_2
 
 cropButton:
     path: /cropButton
     controller: App\Controller\DownloadController::cropButton
+
+EraseItem1:
+     path: /item1/Delete/{basename}/{id}/{images_id}
+     controller: App\Controller\DownloadController::eraseModalItem1
+     methods: [GET]
+
+EraseItem2_1:
+     path: /item2_1/Delete/{basename}/{id}/{images_id}
+     controller: App\Controller\DownloadController::eraseModalItem2_1
+     methods: [GET]
+
+EraseItem2_2:
+     path: /item2_2/Delete/{basename}/{id}/{images_id}
+     controller: App\Controller\DownloadController::eraseModalItem2_2
+     methods: [GET]
+
+DestroyItem1:
+      path: /Item1/Delete/destroy/{basename}/{id}/{images_id}
+      controller: App\Controller\DownloadController::destroyItem1
+
+DestroyItem2_1:
+      path: /Item2_1/Delete/destroy/{basename}/{id}/{images_id}
+      controller: App\Controller\DownloadController::destroyItem2_1
+
+DestroyItem2_2:
+      path: /Item2_2/Delete/destroy/{basename}/{id}/{images_id}
+      controller: App\Controller\DownloadController::destroyItem2_2

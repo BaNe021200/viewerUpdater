@@ -62,4 +62,18 @@ class ImageManager extends Manager
 
         return $thumbnails;
     }
+
+    public function destroyImg($images_id)
+    {
+        $this->pdostatement = $this->pdo->prepare('
+        DELETE
+        FROM images WHERE id = :id ');
+        $this->pdostatement->bindValue(':id',$images_id,PDO::PARAM_INT);
+        $executeIsOk = $this->pdostatement->execute();
+
+        return $executeIsOk;
+
+    }
 }
+
+

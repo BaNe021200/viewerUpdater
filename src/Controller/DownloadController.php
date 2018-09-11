@@ -14,12 +14,36 @@ use App\Controller\ImagesController;
 class DownloadController extends Controller
 {
 
+    /*Fonction download*/
+
+
     public function download($item)
     {
         return $this->render('images/'.$item.'/download'.$item.'.html.twig',[
 
         ]);
     }
+
+    public function downloadItem1()
+    {
+
+        return ($this->download("Item1"));
+    }
+
+    public function downloadItem2_1()
+    {
+        return ($this->download("Item2_1"));
+    }
+
+    public function downloadItem2_2()
+    {
+        return ($this->download("Item2_2"));
+    }
+
+
+
+
+    /* Fonction upload*/
 
 
     public function upload($item)
@@ -87,6 +111,20 @@ class DownloadController extends Controller
         ]);
     }
 
+    public function uploadItem1()
+    {
+        return($this->upload("Item1"));
+    }
+
+    public function uploadItem2_1()
+    {
+        return($this->upload("Item2_1"));
+    }
+
+    public function uploadItem2_2()
+    {
+        return($this->upload("Item2_2"));
+    }
 
 
     public function getImages($item){
@@ -370,48 +408,12 @@ class DownloadController extends Controller
         }
     }
 
-    public function downloadItem2_1()
-    {
-
-        return ($this->download("Item2_1"));
-    }
-
-    public function downloadFursMen()
-    {
-
-        return ($this->download("fursMen"));
-    }
-
-    public function uploadItem2_1()
-    {
-        return($this->upload("Item2_1"));
-    }
-
-    public function uploadFursMen()
-    {
-        return($this->upload("fursMen"));
-    }
-
-    public function downloadItem1()
-    {
-
-        return ($this->download("Item1"));
-    }
-
-    public function uploadItem1()
-    {
-        return($this->upload("Item1"));
-    }
-
-
-
 
     public function updateItem1()
     {
         return $this->getImages('item1');
 
     }
-
 
     public function updateItem2_1()
     {
@@ -425,6 +427,85 @@ class DownloadController extends Controller
 
     }
 
+//Fonction EraseModal
+
+    public function eraseModal($item,$basename,$id,$images_id)
+    {
+
+        return $this->render('images/'.$item.'/erase'.$item.'.html.twig',[
+            'basename' => $basename,
+            'id' =>$id ,
+            'images_Id'=>$images_id
+        ]);
+    }
+
+
+    public function eraseModalItem1($basename,$id,$images_id)
+    {
+        return($this->eraseModal('Item1',$basename,$id,$images_id));
+    }
+
+    public function eraseModalItem2_1($basename,$id,$images_id)
+    {
+        return($this->eraseModal('Item2_1',$basename,$id,$images_id));
+    }
+
+    public function eraseModalItem2_2($basename,$id,$images_id)
+    {
+        return($this->eraseModal('Item2_2',$basename,$id,$images_id));
+    }
+
+
+    /*
+     * fonction destroy
+     */
+
+    public function destroy($item,$id,$images_id)
+    {
+        $messages=[];
+        $tManager = new ThumbnailManager();
+        $destroyThumb = $tManager->destroyThumb($id);
+        if($destroyThumb)
+        {
+            $messages[]="La miniature à bien été détruite !</br> ";
+        }
+        else{
+            $messages[]="Une erreur a surgit du fond de la nuit. La miniature n'a pu être détruite";
+        }
+
+        $iManager = new ImageManager();
+        $destroyImg = $iManager->destroyImg($images_id);
+        if($destroyImg){
+            $messages[]="L'image a bien été détruite !";
+        }
+        else{
+            $messages[]="Une erreur a surgit du fond de la nuit. L'image n'a pu être détruite";
+        }
+
+
+        return $this->render('images/'.$item.'/success'.$item.'.html.twig',[
+            'message' => $messages
+
+        ]);
+
+
+
+    }
+
+    public function destroyItem1($id,$images_id)
+    {
+        return($this->destroy('Item1',$id,$images_id));
+    }
+
+    public function destroyItem2_1($id,$images_id)
+    {
+        return($this->destroy('Item2_1',$id,$images_id));
+    }
+
+    public function destroyItem2_2($id,$images_id)
+    {
+        return($this->destroy('Item2_2',$id,$images_id));
+    }
 
 
 

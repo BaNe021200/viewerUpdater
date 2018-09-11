@@ -1,6 +1,6 @@
 {% extends "images/item1/item1.html.twig" %}
 
-{% block updateButtonLink %}{{ path('UpdateItem2.1') }}{% endblock %}
+{% block updateButtonLink %}{{ path('UpdateItem2_1') }}{% endblock %}
 {% block title %}Item 2.1{% endblock title %}
 
 
@@ -8,14 +8,12 @@
 
 {% block item0002Active %}active{% endblock %}
 
-{% block test %}
 
-{% endblock test %}
 
 
 {% block secondarytxt %}Item 2.1{% endblock secondarytxt %}
 
-{% block downloadButtonLink %}{{ path('item2Download2.1') }}{% endblock %}
+{% block downloadButtonLink %}{{ path('downloadItem2_1') }}{% endblock %}
 
 {% block item %}item2_1{% endblock item %}
 
@@ -26,4 +24,7 @@
 
 {% block levelLinkThumbs %}../{% endblock levelLinkThumbs %}
 {% block levelLink%}../{% endblock levelLink %}
-
+{% block levelLinkThumbs2 %}../{% endblock levelLinkThumbs2 %}
+{% block eraseItem %}
+    {{ path('EraseItem2_1', {'basename': thumb.basename,'id': thumb.getId ,'images_id': thumb.getImagesId } ) }}
+{% endblock %}
