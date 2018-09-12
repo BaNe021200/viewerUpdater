@@ -24,6 +24,11 @@ class ImagesController extends Controller
         ]);
     }
 
+    public function item1()
+    {
+        return ($this->item('Item1'));
+    }
+
     public function item($item)
     {
 
@@ -62,21 +67,18 @@ class ImagesController extends Controller
 
 
 
-    public function item1()
-    {
-        return ($this->item('Item1'));
-    }
 
 
 
-    public function openExplo($item)
+
+    /*public function openExplo($item)
     {
      $explo=  exec("C:\WINDOWS\\explorer.exe /e,/select,C:\wamp64\www\PhpTraining\pinterest\pinterest2\public\img\\".$item."\\thumbs");
 
         return $this->redirect($this->item($item));
 
 
-    }
+    }*/
 
 
 

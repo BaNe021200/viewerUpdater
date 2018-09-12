@@ -14,34 +14,6 @@ item2_2:
     path: /item2/item2_2
     controller: App\Controller\ImagesController::item2_2
 
-
-downloadItem1:
-    path: /item1/download
-    controller: App\Controller\DownloadController::downloadItem1
-
-downloadItem2_1:
-    path: /item2/item2_1/download
-    controller: App\Controller\DownloadController::downloadItem2_1
-
-downloadItem2_2:
-    path: /item2/item2_2/download
-    controller: App\Controller\DownloadController::downloadItem2_2
-
-UploadItem1:
-    path: /item1/upload
-    controller: App\Controller\DownloadController::uploadItem1
-    methods: [POST]
-
-UploadItem2_1:
-    path: /item2/item2_1/upload
-    controller: App\Controller\DownloadController::uploadItem2_1
-    methods: [POST]
-
-Uploaditem2_2:
-    path: /item2/item2_2/upload
-    controller: App\Controller\DownloadController::uploadItem2_2
-    methods: [POST]
-
 UpdateItem1:
     path: /item1/Update
     controller: App\Controller\DownloadController::updateItem1
@@ -54,9 +26,7 @@ UpdateItem2_2:
     path: /item2/item2_2/Update
     controller: App\Controller\DownloadController::updateItem2_2
 
-cropButton:
-    path: /cropButton
-    controller: App\Controller\DownloadController::cropButton
+
 
 EraseItem1:
      path: /item1/Delete/{basename}/{id}/{images_id}
